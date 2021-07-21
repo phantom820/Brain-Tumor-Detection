@@ -22,10 +22,14 @@ The CPU implementation of the Logistic Regression model relies solely on numpy. 
 The GPU implementation of the Logistic Regression model relies on torch and numpy. The underlying GPU hardware was as follows
  - GeForce GTX 1060 with Max-Q Design/PCIe/SSE2  
 
-
 ## RESULTS
 The 2 implementations were bench marked in terms of the computational time taken to complete an update of the weights for a given number of iterations 
 using gradient descent. Each experiment was run a number of times and the average result taken. The set used for experimentaion is the training set which consist of
 1 982 images each of dimensions (128 by 128) or flattened to be 1 by 16 384 feature vectors. The curves give a visual representation of the results
 
 ![Alt text](https://github.com/phantom820/Brain-Tumor-Detection/blob/master/figures/runtime.png)
+
+The results indicate that the GPU out performs the CPU as shown by blue (GPU time ranges fraction of a second) and red curves (CPU time ranges > 1 sec) and the green curve shows that the GPU can be about 36 times faster than the CPU. Hence it is optimal to implement models on a GPU.
+
+## MODEL PERFOMANCE
+Although this was not the main aim, the model trained on the GPU went on to achieve a baseline performance of 89% more details are in notebook.
